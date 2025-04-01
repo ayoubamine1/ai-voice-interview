@@ -8,8 +8,7 @@ function initFirebaseAdmin() {
   
 
   if (!apps.length) {
-    console.log("Initializing Firebase Admin SDK...");
-    console.log(process.env.FIREBASE_PRIVATE_KEY);
+
     initializeApp({
       credential: cert({
         projectId: process.env.FIREBASE_PROJECT_ID,
