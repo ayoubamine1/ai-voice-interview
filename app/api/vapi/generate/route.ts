@@ -70,10 +70,10 @@ export async function POST(request: Request) {
 
 
     const interview = {
-      // role: role,
-      // type: type,
-      // level: level,
-      // techstack: techstack.split(","),
+      role: role,
+      type: type,
+      level: level,
+      techstack: techstack.split(","),
       questions: JSON.parse(questions),
       userId: userid,
       finalized: true,
@@ -81,6 +81,7 @@ export async function POST(request: Request) {
       createdAt: new Date().toISOString(),
     };
 
+    console.log("interview", interview);
     await db.collection("interviews").add(interview);
 
     return Response.json({ success: true }, { status: 200 });
